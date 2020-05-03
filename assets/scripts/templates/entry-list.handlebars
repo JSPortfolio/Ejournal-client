@@ -1,0 +1,11 @@
+{{#each entries as |entry|}}
+  {{log book}}
+  <section data-id="{{entry.id}}" class='entry-log'>
+    <h3>Title:</h3>
+    <h6>
+      {{entry.name}}
+    </h6>
+    <button>View</button>
+  </section>
+
+{{/each}}

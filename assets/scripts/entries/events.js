@@ -6,6 +6,8 @@ const api = require('./api.js')
 
 const ui = require('./ui.js')
 
+const store = require('../store.js')
+
 const onGetEntries = function (event) {
   event.preventDefault()
 
@@ -28,8 +30,22 @@ const onGetUserEntries = function (event) {
     .catch(ui.failure)
 }
 
+const onViewEntry = function (event) {
+  event.preventDefault()
+
+  store.viewItemID = $(this).data('id')
+
+  console.log(store.viewItemID)
+
+  api.viewEntry(store.viewItemID)
+    .then(ui.viewSingleEntrySuccess)
+
+    .catch(ui.failure)
+}
 module.exports = {
   onGetEntries,
 
-  onGetUserEntries
+  onGetUserEntries,
+
+  onViewEntry
 }

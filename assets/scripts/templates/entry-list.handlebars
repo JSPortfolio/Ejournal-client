@@ -1,10 +1,10 @@
 {{#each entries as |entry|}}
-  <section data-id="{{entry.id}}" class='entry-log'>
+  <section data-id="{{entry._id}}" class='entry-log'>
     <h3>Title:</h3>
     <h6>
       {{entry.title}}
     </h6>
-    <button>View</button>
+    <button data-id="{{entry._id}}" class='view-entry'>View</button>
   </section>
 
 {{/each}}

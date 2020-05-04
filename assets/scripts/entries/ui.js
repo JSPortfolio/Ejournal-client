@@ -6,10 +6,10 @@ const entryList = require('../templates/entry-list.handlebars')
 
 const userEntryList = require('../templates/entry-personal-list.handlebars')
 
+const singleEntry = require('../templates/entry-single.handlebars')
+
 const getEntriesSuccess = function (data) {
   const showEntries = entryList({entries: data.entries})
-
-  $('#entry-view').html()
 
   $('#entry-view').html(showEntries)
 
@@ -26,8 +26,19 @@ const getUserEntriesSuccess = function (data) {
   console.log('PERSONAL ENTRIES RETRIEVED')
 }
 
+const viewSingleEntrySuccess = function (data) {
+
+  const showSingleEntry = singleEntry({entry: data.entry})
+
+  $('#entry-view').html(showSingleEntry)
+
+  console.log('SINGLE ENTRY VIEW')
+}
+
 module.exports = {
   getEntriesSuccess,
 
-  getUserEntriesSuccess
+  getUserEntriesSuccess,
+
+  viewSingleEntrySuccess
 }

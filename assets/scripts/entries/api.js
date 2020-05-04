@@ -8,7 +8,7 @@ function getEntries () {
   })
 }
 
-function showEntry (id) {
+function viewEntry (id) {
   return $.ajax({
     url: config.apiUrl + '/entries/' + id,
     method: 'GET'
@@ -61,7 +61,7 @@ function getUserEntries (data) {
 
 module.exports = {
   getEntries,
-  showEntry,
+  viewEntry,
   createEntry,
   updateEntry,
   deleteEntry,

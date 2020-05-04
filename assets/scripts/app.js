@@ -12,6 +12,8 @@ const entryEvents = require('./entries/events.js')
 // require('./example')
 
 $(() => {
+
+  // VIEW PAGE STARTING EVENTS
   $('#entrance-view').show()
   $('#user-view').hide()
 
@@ -20,7 +22,10 @@ $(() => {
   $('#sign-in').on('submit', authenticationEvents.onSignIn)
   $('#change-password').on('submit', authenticationEvents.onChangePassword)
   $('#sign-out').on('submit', authenticationEvents.onSignOut)
+
+  // VIEW ENTRIES EVENT LISTENERS
   $('#view-all').on('click', entryEvents.onGetEntries)
   $('#view-user-entries').on('click', entryEvents.onGetUserEntries)
-  // your JS code goes here
+  $('#entry-view').on('click', '.view-entry', entryEvents.onViewEntry)
+
 })

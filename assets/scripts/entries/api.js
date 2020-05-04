@@ -47,10 +47,12 @@ function deleteEntry (id) {
   })
 }
 
-function getUserEntries (id) {
+function getUserEntries (data) {
   return $.ajax({
-    url: config.apiUrl + '/users/' + id,
+    url: config.apiUrl + '/entries_pass/',
+
     method: 'GET',
+
     headers: {
       Authorization: 'Token token=' + store.user.token
     }

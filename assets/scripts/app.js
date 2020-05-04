@@ -21,5 +21,6 @@ $(() => {
   $('#change-password').on('submit', authenticationEvents.onChangePassword)
   $('#sign-out').on('submit', authenticationEvents.onSignOut)
   $('#view-all').on('click', entryEvents.onGetEntries)
+  $('#view-user-entries').on('click', entryEvents.onGetUserEntries)
   // your JS code goes here
 })
